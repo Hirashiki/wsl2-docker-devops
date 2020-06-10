@@ -1,0 +1,13 @@
+version: "3.4"
+volumes:
+  jenkins_data:
+    name: jenkins_data
+services:
+  jenkins:  
+    build: .
+    ports:
+        - "8080:8080"
+        - "9080:8080"
+    volumes:
+      - ./groovy:/var/jenkins_home/init.groovy.d
+      - jenkins_data:/var/jenkins_home:rw
