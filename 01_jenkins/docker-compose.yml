@@ -11,3 +11,6 @@ services:
     volumes:
       - ./groovy:/var/jenkins_home/init.groovy.d
       - jenkins_data:/var/jenkins_home:rw
+      - ./jobs:/var/jenkins_home/jobs
+      - ./m2:/usr/share/maven/.m2
+      - ./tools:/usr/share/jenkins_tools
